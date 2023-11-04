@@ -12,5 +12,5 @@ public class BasketItem
     public int BasketId { get; set; }
 
     [ForeignKey(nameof(BasketId))]
-    public Basket Basket { get; set; }
+    public Basket? Basket { get; set; }
 }

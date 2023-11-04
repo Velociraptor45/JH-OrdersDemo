@@ -21,7 +21,6 @@ public class OrdersController : ControllerBase
     public async Task<IActionResult> CreateBasket()
     {
         var basket = await _repository.CreateBasketAsync();
-
         var basketContract = new BasketContract(basket.Id, Enumerable.Empty<BasketItemContract>(), null);
 
         return CreatedAtAction(nameof(GetBasket), new { basketId = basketContract.Id }, basketContract);
